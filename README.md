@@ -6,7 +6,7 @@ Spanish driving licence exam - wrong answers & questions with doubts.
 
 - `REVIEW.md` - **汇总复习文档**（按错误类型分类，一份文档看所有错题）
 - `wrong/` - 每道错题的详细分析（单独文件）
-- `textbook.pdf` - B驾照理论速成教材（英中双语，autoescuela.com）
+- `textbook.pdf` - B驾照理论速成教材（英中双语，autoescuela.com）【本地保存，不上传 repo】
 
 ## Textbook Index
 
