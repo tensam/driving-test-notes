@@ -11,6 +11,7 @@ Spanish driving licence (DGT) exam prep. User sends wrong/doubtful questions, Cl
 - `REVIEW.md` — master review doc, categorized by error type
 - `PROGRESS.md` — mock test progress tracking (error counts, trends per category)
 - `wrong/NNN-slug.md` — detailed analysis per question
+- `images/NNN-slug.png` — 原题截图（对错都存，用于 HTML 复习页展示）
 - `tmp-session.md` — temporary buffer during a session (local only, gitignored)
 - `textbook_kb/` — 本地知识库（SQLite FTS + 章节 Markdown + 页面图片）
 - `scripts/query_textbook_kb.py` — 知识库查询工具
@@ -55,18 +56,21 @@ python3 scripts/query_textbook_kb.py \
 
 ### Phase 1: Explain Mode (user is sending questions)
 ```
-User sends screenshot → 查 KB 取证 → Explain immediately in chat → Append to tmp-session.md → Done, wait for next
+User sends screenshot → 保存原题截图到 images/ → 查 KB 取证 → Explain immediately in chat → Append to tmp-session.md → Done, wait for next
 ```
 - **NO committing, NO pushing during this phase**
+- **保存原题截图**：无论对错，都把用户发来的截图复制到 `images/NNN-slug.png`（编号与 wrong/ 一致）
 - Save to `tmp-session.md` with a quick block (number + key points)
 - Keep explanations concise, focus on why the answer is right/wrong
 - If user says "我有疑问" (doubt, not necessarily wrong) → still explain + save
 
 ### Phase 2: Archive Mode (user says "存档" / "好了" / "全部发完了")
 ```
-Read tmp-session.md → Create wrong/NNN files → Update REVIEW.md → Update PROGRESS.md → Run stats → Commit + Push → Delete tmp-session.md
+Read tmp-session.md → Create wrong/NNN files → Update REVIEW.md → Update PROGRESS.md → Update TEST_ERRORS → Run stats → Commit + Push → Delete tmp-session.md
 ```
-- **Stats step**: If this session was a mock test, update `TEST_ERRORS` in `scripts/pass_probability.py` with the error count, then run `python3 scripts/pass_probability.py` and show results to user
+- **每次"存档" = 一套模拟考试做完了**。用户发来的是该套的错题（偶尔也有没错但有疑问的题）
+- 错题数 = 本次 session 中标记为 ❌ 的题目数量（答对的、仅有疑问的不算）
+- **必须更新** `TEST_ERRORS` 和 `PROGRESS.md`，然后运行 `pass_probability.py` 展示结果
 
 ### Progress Tracking (PROGRESS.md)
 Each mock test session gets a row in the summary table:
@@ -113,8 +117,15 @@ Each mock test session gets a row in the summary table:
 ## Key Vocabulary
 ```
 
+## HTML Review Page (review.html)
+When user asks to generate/open the HTML review page:
+- Layout per question: **原题截图在上** → **讲解在下**
+- Image source: `images/NNN-slug.png`
+- Explanation: from `wrong/NNN-slug.md` content
+- Support filtering by category, search, etc.
+
 ## Numbering
-Next question number: check `ls wrong/` and increment. Current max: #037.
+Next question number: check `ls wrong/` and increment. Current max: #047.
 
 ## Language
 - Explanations: Chinese (中文)
@@ -124,7 +135,7 @@ Next question number: check `ls wrong/` and increment. Current max: #037.
 ## Key Rules (DO NOT)
 - 不要直接读 PDF → 先查 `textbook_kb`
 - 不要在 Explain Mode 提前 commit / push
-- 不要把散题当成 mock test 记入 PROGRESS.md 和 TEST_ERRORS
+- 每次"存档" = 一套模拟考完成，必须更新 PROGRESS.md 和 TEST_ERRORS
 - 不要只凭 REVIEW.md 回答规则原文题 → 查 KB 取证
 - 不要遇到图示题只看文字不看图 → 查完文字再开图页
 - 不要改掉用户已有的错题编号体系
