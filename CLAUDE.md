@@ -125,7 +125,7 @@ When user asks to generate/open the HTML review page:
 - Support filtering by category, search, etc.
 
 ## Numbering
-Next question number: check `ls wrong/` and increment. Current max: #047.
+Next question number: check `ls wrong/` and increment. Current max: #052.
 
 ## Language
 - Explanations: Chinese (中文)

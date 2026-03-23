@@ -46,6 +46,9 @@
 ### #042 施工标志看线条数量
 两条弯曲线都偏向对面 = 两条车道被分流到对向道路。一条线偏移=一车道分流，两条=两车道。数清图里的线。
 
+### #049 补充牌波浪线 = 雾（fog），不是洪水（flooded）
+S-890补充牌天气图案：波浪弯曲线=雾，雨滴=雨，雪花=雪。波浪线是飘散的雾气，不是水面。
+
 ### #009 禁止超车标志 → 掉头也禁止
 **图中有禁止超车标志时**，掉头（U-turn）同样禁止。
 
@@ -67,6 +70,9 @@ roadway = 车行道（机动车正常行驶）。median strip = 中央隔离带�
 
 ### #046 Xenon vs Halogen 分不清哪个更高级
 Xenon（氙气灯）= 高级版，各方面都好：照明更亮更白 + 减少眼疲劳。Halogen（卤素灯）= 旧技术。记忆：X = eXcellent。
+
+### #050 drive on = 直行，green arrow = 方向箭头灯
+"drive on"不是"还能不能开"，是"能否直行"。红灯+绿箭头=只能走箭头方向，其他方向禁止。green arrow可以指任何方向，不是特指右转。
 
 ### #041 cannabis "reduces sleepiness" 方向陷阱
 大麻让人更困（increases sleepiness），C选项说"reduces sleepiness and concentration"——reduces concentration对，但reduces sleepiness反了。一对一错=整个选项错。
@@ -197,6 +203,15 @@ ABS 核心功能：防止车轮锁死 → 急刹时仍能控制方向盘。砂�
 
 ### #045 摩托车高速道路限速 = 120（不是90）
 混淆 conventional road（90）和 dual carriageway（120）。摩托车不分排量，在高速道路上和小汽车一样 = 120 km/h。90 是市外常规道路限速。
+
+### #048 安非他命 = 毒品，绝对禁止，无medical treatment例外
+毒品（cannabis, cocaine, amphetamine）驾驶时一律禁止。只有普通药物（antihistamines, psychodrugs）可在医嘱下使用。
+
+### #051 窄路让行：带拖车 > 公交车 > 小汽车
+带拖车有铰接点，倒车最难→最优先。bus虽大但一体，倒车比拖车简单→bus让行。
+
+### #052 超越电车从右侧（双向道路）
+普通超车从左，但电车在双向道路中间时例外——左边是对向来车，只能从右边超。
 
 ### #010 强制险（Seguro Obligatorio）赔偿范围
 强制险 = **只保你可能伤害的别人（第三方），不保自己**。
